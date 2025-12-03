@@ -1,12 +1,13 @@
-declare let stringArr: (string | number)[];
-type KDramas = {
-    genre: string | boolean;
+type stringOrNumber = string | number;
+type stringOrNumberArray = (string | number)[];
+type Guitarist = {
     name?: string;
-    year?: number;
-    good: boolean;
-    actors: string[];
+    active: boolean;
+    albums: stringOrNumberArray;
 };
-declare let Romance: KDramas;
-declare let Psych: KDramas;
-declare const greetActor: (kdrama: KDramas) => string;
+type UserId = stringOrNumber;
+declare let myName: "Tracey Kadenyi";
+declare let userName: "Trace" | "Bruce" | "Bruno" | "Colleta";
+declare const add: (a: number, b: number) => number;
+declare const logMsg: (message: any) => void;
 //# sourceMappingURL=main.d.ts.map

@@ -1,31 +1,19 @@
 "use strict";
-// let stringArr: (string | number)[] = ["one", "two", "three", 4];
-let stringArr;
-stringArr = ["one", "two", "three", 4];
-stringArr.push(5);
-stringArr.unshift("first");
-let Romance = {
-    genre: "Romance",
-    name: "Queen of Tears",
-    year: 2024,
-    good: true,
-    actors: ["Kim Soo Hyun", "Kim Ji Won"],
+// Literal types
+// unchangeable
+let myName;
+// strictly only the listed names
+let userName;
+userName = "Bruce";
+// functions
+const add = (a, b) => {
+    return a + b;
 };
-let Psych = {
-    genre: "Psychological Drama",
-    name: "It's okay not to be okay",
-    //   year: 2020,
-    good: true,
-    actors: ["Kim Soo Hyun", "Seo Ye Ji"],
+// console.log(add(4, 5));
+// no return
+const logMsg = (message) => {
+    console.log(message);
 };
-// Romance = Psych
-// console.log(Romance);
-// console.log(Psych);
-const greetActor = (kdrama) => {
-    if (kdrama.name) {
-        return `Hello ${kdrama.name}`;
-    }
-    return 'Hello';
-};
-console.log(greetActor(Psych));
+logMsg('Hello!');
+logMsg(add(2, 3));
 //# sourceMappingURL=main.js.map
