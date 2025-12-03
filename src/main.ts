@@ -8,5 +8,12 @@ type Guitarist = {
   albums: stringOrNumberArray;
 };
 
-type UserId = stringOrNumber
+type UserId = stringOrNumber;
 
+// Literal types
+// unchangeable
+let myName: "Tracey Kadenyi";
+
+// strictly only the listed names
+let userName: "Trace" | "Bruce" | "Bruno" | "Colleta";
+userName = "Bruce";
