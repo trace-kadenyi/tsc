@@ -14,6 +14,6 @@ const add = (a, b) => {
 const logMsg = (message) => {
     console.log(message);
 };
-logMsg('Hello!');
+logMsg("Hello!");
 logMsg(add(2, 3));
 //# sourceMappingURL=main.js.map

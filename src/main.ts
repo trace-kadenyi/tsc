@@ -26,11 +26,9 @@ const add = (a: number, b: number): number => {
 // console.log(add(4, 5));
 
 // no return
-
 const logMsg = (message: any): void => {
   console.log(message);
 };
 
-
-logMsg('Hello!')
-logMsg(add(2, 3))
+logMsg("Hello!");
+logMsg(add(2, 3));
