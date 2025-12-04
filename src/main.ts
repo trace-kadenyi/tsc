@@ -40,11 +40,11 @@ let subtract = function (c: number, d: number): number {
 
 // logMsg(subtract(49, 18));
 
-// type mathFunction = (a: number, b: number) => number;
+type mathFunction = (a: number, b: number) => number;
 
-interface mathFunction {
-  (a: number, b: number): number;
-}
+// interface mathFunction {
+//   (a: number, b: number): number;
+// }
 
 let multiply: mathFunction = function (c, d) {
   return c * d;
@@ -61,3 +61,11 @@ const addition: mathFunction = (t, x) => {
 logMsg(multiply(134, 6));
 logMsg(division(64, 8));
 logMsg(addition(6, 7));
+
+// optional parameters
+const addAll = (a: number, b: number, c?: number): number => {
+  if (typeof c !== "undefined") {
+    return a + b + c;
+  }
+  return a + b;
+};
