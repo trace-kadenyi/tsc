@@ -58,9 +58,9 @@ const addition: mathFunction = (t, x) => {
   return t + x;
 };
 
-logMsg(multiply(134, 6));
-logMsg(division(64, 8));
-logMsg(addition(6, 7));
+// logMsg(multiply(134, 6));
+// logMsg(division(64, 8));
+// logMsg(addition(6, 7));
 
 // optional parameters
 const addAll = (a: number, b: number, c?: number): number => {
@@ -69,3 +69,17 @@ const addAll = (a: number, b: number, c?: number): number => {
   }
   return a + b;
 };
+
+// default param value
+const sumAll = (a: number, b: number, c = 2): number => {
+  return a + b + c;
+};
+
+// option 2 for default param value
+const sumAll2 = (a: number = 10, b: number, c: number = 2): number => {
+  return a + b + c;
+};
+logMsg(addAll(1, 2, 3));
+logMsg(addAll(4, 6));
+logMsg(sumAll(1, 2));
+logMsg(sumAll2(undefined, 5))
