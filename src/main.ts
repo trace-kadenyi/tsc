@@ -79,7 +79,14 @@ const sumAll = (a: number, b: number, c = 2): number => {
 const sumAll2 = (a: number = 10, b: number, c: number = 2): number => {
   return a + b + c;
 };
-logMsg(addAll(1, 2, 3));
-logMsg(addAll(4, 6));
-logMsg(sumAll(1, 2));
-logMsg(sumAll2(undefined, 5))
+// logMsg(addAll(1, 2, 3));
+// logMsg(addAll(4, 6));
+// logMsg(sumAll(1, 2));
+// logMsg(sumAll2(undefined, 5))
+
+// REST PARAMS
+const total = (a: number, ...nums: number[]): number => {
+  return a + nums.reduce((prev, curr) => prev + curr);
+};
+
+logMsg(total(1, 2));
