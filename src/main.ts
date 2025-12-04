@@ -40,7 +40,11 @@ let subtract = function (c: number, d: number): number {
 
 // logMsg(subtract(49, 18));
 
-type mathFunction = (a: number, b: number) => number;
+// type mathFunction = (a: number, b: number) => number;
+
+interface mathFunction {
+  (a: number, b: number): number;
+}
 
 let multiply: mathFunction = function (c, d) {
   return c * d;
