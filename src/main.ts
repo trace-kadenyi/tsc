@@ -89,4 +89,22 @@ const total = (a: number, ...nums: number[]): number => {
   return a + nums.reduce((prev, curr) => prev + curr);
 };
 
-logMsg(total(1, 2));
+// logMsg(total(1, 2));
+
+// NEVER TYPE
+const createError = (errMsg: string): never => {
+  throw new Error(errMsg);
+};
+
+const infinite = () => {
+  let i: number = 1;
+  // endless loop/never type
+  while (true) {
+    i++;
+    // console.log(i);
+    // solution = return type:void
+    if (i === 100) break;
+  }
+};
+
+// logMsg(infinite());
