@@ -30,5 +30,30 @@ const logMsg = (message: any): void => {
   console.log(message);
 };
 
-logMsg("Hello!");
-logMsg(add(2, 3));
+// logMsg("Hello!");
+// logMsg(add(2, 3));
+
+// !== arrow function
+let subtract = function (c: number, d: number): number {
+  return c - d;
+};
+
+// logMsg(subtract(49, 18));
+
+type mathFunction = (a: number, b: number) => number;
+
+let multiply: mathFunction = function (c, d) {
+  return c * d;
+};
+
+const division: mathFunction = (d, f) => {
+  return d / f;
+};
+
+const addition: mathFunction = (t, x) => {
+  return t + x;
+};
+
+logMsg(multiply(134, 6));
+logMsg(division(64, 8));
+logMsg(addition(6, 7));
