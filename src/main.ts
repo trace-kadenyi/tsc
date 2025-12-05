@@ -6,3 +6,7 @@ type Three = "hello";
 let a: One = "hello";
 let b = a as Two; // less specific
 let c = a as Three; // more specific
+
+// angle brackets
+let d = <One>"world";
+let e = <string | number>34;
