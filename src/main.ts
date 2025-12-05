@@ -109,7 +109,36 @@ const Bruno = new Peeps("Bruno");
 const Tracey = new Peeps("Tracey");
 const Colleta = new Peeps("Colleta");
 
-console.log(`Bruce's id: ${Bruce.id}`);
-console.log(`Bruno's id: ${Bruno.id}`);
-console.log(`Tracey's id: ${Tracey.id}`);
-console.log(`Total count: ${Peeps.count}`);
+// console.log(`Bruce's id: ${Bruce.id}`);
+// console.log(`Bruno's id: ${Bruno.id}`);
+// console.log(`Tracey's id: ${Tracey.id}`);
+// console.log(`Total count: ${Peeps.count}`);
+
+/////////////////////////////    DIVIDER  ///////////////////////////////////////
+
+class Bands {
+  private dataState: string[];
+
+  constructor() {
+    this.dataState = [];
+  }
+
+  // getter
+  public get data(): string[] {
+    return this.dataState;
+  }
+
+  // setter
+  public set data(value: string[]) {
+    if (Array.isArray(value) && value.every((el) => typeof el === "string")) {
+      this.dataState = value;
+      return;
+    } else throw new Error("Param is not an array of strings.");
+  }
+}
+
+const MyBands = new Bands();
+MyBands.data = ["Neil Young", "Led Zep"];
+console.log(MyBands.data);
+MyBands.data = ["A Great Big World", ...MyBands.data, "ZZ Top"];
+console.log(MyBands.data);
