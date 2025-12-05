@@ -40,7 +40,7 @@ const img = document.querySelector("img")!;
 const img2 = document.querySelector("img") as HTMLImageElement;
 
 // HTMLElement
-const myImg = document.getElementById("#img") as HTMLImageElement;
+const myImg = document.getElementById("img") as HTMLImageElement;
 
 // bracket notation
 const nextImg = <HTMLImageElement>document.getElementById("#img");
