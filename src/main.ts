@@ -85,4 +85,31 @@ class Guitarist implements Musician {
 }
 
 const Page = new Guitarist("Jimmy", "guitar");
-console.log(Page.play("strums"));
+// console.log(Page.play("strums"));
+
+/////////////////////////////    DIVIDER  ///////////////////////////////////////
+
+class Peeps {
+  static count: number = 0;
+
+  static getCount(): number {
+    return Peeps.count;
+  }
+
+  public id: number;
+
+  constructor(public name: string) {
+    this.name = name;
+    this.id = ++Peeps.count;
+  }
+}
+
+const Bruce = new Peeps("Bruce");
+const Bruno = new Peeps("Bruno");
+const Tracey = new Peeps("Tracey");
+const Colleta = new Peeps("Colleta");
+
+console.log(`Bruce's id: ${Bruce.id}`);
+console.log(`Bruno's id: ${Bruno.id}`);
+console.log(`Tracey's id: ${Tracey.id}`);
+console.log(`Total count: ${Peeps.count}`);
