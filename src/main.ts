@@ -18,11 +18,11 @@ const todaysTransactions: TransactionObj = {
   Dave: 78, // added
 };
 
-console.log(todaysTransactions.Pizza);
-console.log(todaysTransactions["Books"]);
+// console.log(todaysTransactions.Pizza);
+// console.log(todaysTransactions["Books"]);
 
 let prop: string = "Pizza";
-console.log(`prop: ${todaysTransactions[prop]}`);
+// console.log(`prop: ${todaysTransactions[prop]}`);
 
 const todaysNet = (transactions: TransactionObj): number | string => {
   let total = 0;
@@ -35,7 +35,26 @@ const todaysNet = (transactions: TransactionObj): number | string => {
   return "total: " + total;
 };
 
-console.log(todaysNet(todaysTransactions));
+// console.log(todaysNet(todaysTransactions));
 // todaysTransactions.Pizza = 40 -> unacceptable/unassignable due to readonly
 
-console.log(todaysTransactions["Dave"]);
+// console.log(todaysTransactions["Dave"]);
+
+//////////////////////////////////////////////////////////////////////
+
+interface Student {
+  // [key: string]: string | number | number[] | undefined;
+  name: string;
+  GPA: number;
+  classes?: number[];
+}
+
+const student: Student = {
+  name: "Doug",
+  GPA: 3.5,
+  classes: [100, 200],
+};
+
+for (const key in student) {
+  console.log(`${key}: ${student[key as keyof Student]}`);
+}
