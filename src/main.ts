@@ -58,12 +58,12 @@ const student: Student = {
 // KEYOF
 // 1st method
 for (const key in student) {
-  console.log(`${key}: ${student[key as keyof Student]}`);
+  // console.log(`${key}: ${student[key as keyof Student]}`);
 }
 
 // 2nd method
 Object.keys(student).map((key) => {
-  console.log(student[key as keyof typeof student]);
+  // console.log(student[key as keyof typeof student]);
 });
 
 // 3rd method
@@ -71,4 +71,23 @@ const logStudentKey = (student: Student, key: keyof Student): void => {
   console.log(`Student ${key}: ${student[key]}`);
 };
 
-logStudentKey(student, "GPA");
+// logStudentKey(student, "GPA");
+
+//////////////////////////////////////////////////////////////////
+// interface Incomes {
+//   [key:string]: number
+// }
+
+type Streams = "salary" | "bonus" | "sidehustle";
+
+type Incomes = Record<Streams, number | string>;
+
+const monthlyIncomes: Incomes = {
+  salary: 500,
+  bonus: 100,
+  sidehustle: 250,
+};
+
+for (const revenue in monthlyIncomes) {
+  console.log(monthlyIncomes[revenue as keyof Incomes]);
+}
