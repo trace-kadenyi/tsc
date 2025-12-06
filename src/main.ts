@@ -1,18 +1,21 @@
 // index signatures
+
 // interface TransactionObj {
-//   Pizza: number;
-//   Books: number;
-//   Job: number;
+//   readonly [index: string]: number;
 // }
 
 interface TransactionObj {
-  readonly [index: string]: number;
+  readonly [index: string]: number; // allows us to add other properties such as Dave below
+  Pizza: number;
+  Books: number;
+  Job: number;
 }
 
 const todaysTransactions: TransactionObj = {
   Pizza: -10,
   Books: -5,
   Job: 50,
+  Dave: 78, // added
 };
 
 console.log(todaysTransactions.Pizza);
@@ -34,3 +37,5 @@ const todaysNet = (transactions: TransactionObj): number | string => {
 
 console.log(todaysNet(todaysTransactions));
 // todaysTransactions.Pizza = 40 -> unacceptable/unassignable due to readonly
+
+console.log(todaysTransactions["Dave"]);
