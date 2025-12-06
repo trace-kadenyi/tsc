@@ -6,7 +6,7 @@
 // }
 
 interface TransactionObj {
-  [index: string]: number;
+  readonly [index: string]: number;
 }
 
 const todaysTransactions: TransactionObj = {
@@ -19,17 +19,18 @@ console.log(todaysTransactions.Pizza);
 console.log(todaysTransactions["Books"]);
 
 let prop: string = "Pizza";
-console.log(`prop: ${todaysTransactions[prop]}`)
+console.log(`prop: ${todaysTransactions[prop]}`);
 
 const todaysNet = (transactions: TransactionObj): number | string => {
   let total = 0;
-  for(const transaction in transactions) {
-    const value = transactions[transaction]
-    if(value !== undefined) {
-      total += value
+  for (const transaction in transactions) {
+    const value = transactions[transaction];
+    if (value !== undefined) {
+      total += value;
     }
   }
   return "total: " + total;
 };
 
 console.log(todaysNet(todaysTransactions));
+// todaysTransactions.Pizza = 40 -> unacceptable/unassignable due to readonly
