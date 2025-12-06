@@ -55,6 +55,20 @@ const student: Student = {
   classes: [100, 200],
 };
 
+// KEYOF
+// 1st method
 for (const key in student) {
   console.log(`${key}: ${student[key as keyof Student]}`);
 }
+
+// 2nd method
+Object.keys(student).map((key) => {
+  console.log(student[key as keyof typeof student]);
+});
+
+// 3rd method
+const logStudentKey = (student: Student, key: keyof Student): void => {
+  console.log(`Student ${key}: ${student[key]}`);
+};
+
+logStudentKey(student, "GPA");
