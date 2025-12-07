@@ -88,6 +88,7 @@ const monthlyIncomes: Incomes = {
   sidehustle: 250,
 };
 
+// loop for revenue
 for (const revenue in monthlyIncomes) {
   console.log(monthlyIncomes[revenue as keyof Incomes]);
 }
