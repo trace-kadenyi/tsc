@@ -18,8 +18,8 @@ const todaysTransactions: TransactionObj = {
   Dave: 78, // added
 };
 
-// console.log(todaysTransactions.Pizza);
-// console.log(todaysTransactions["Books"]);
+console.log(todaysTransactions.Pizza);
+console.log(todaysTransactions["Books"]);
 
 let prop: string = "Pizza";
 // console.log(`prop: ${todaysTransactions[prop]}`);
