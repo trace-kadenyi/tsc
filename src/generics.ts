@@ -74,6 +74,7 @@ const checkBoolValue = <T>(arg: T): BoolCheck<T> => {
 
 //////////////////////////////////////////////////////////////////////
 
+// extend interface approach
 interface HasID {
   id: number;
 }
