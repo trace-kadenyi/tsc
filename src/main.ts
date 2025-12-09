@@ -77,3 +77,4 @@ const processUser = <T extends HasID>(user: T): T => {
 };
 
 console.log(processUser({ id: 1, name: "Tracey" }));
+// console.log(processUser({ name: "Tracey" })); - ERROR: no id as in HasID
