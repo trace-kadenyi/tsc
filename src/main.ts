@@ -11,6 +11,8 @@ const isObj = <T>(arg: T): boolean => {
 // console.log(isObj({ name: "John" }));
 // console.log(isObj(null));
 
+///////////////////////////////////////////////////////////////////////////
+
 const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
   if (
     (Array.isArray(arg) && !arg.length) ||
@@ -36,6 +38,8 @@ const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
 // console.log(isTrue([1, 2, 3]));
 // console.log(isTrue(NaN));
 // console.log(isTrue(-0));
+
+///////////////////////////////////////////////////////////////////////
 
 interface BoolCheck<T> {
   value: T;
@@ -68,6 +72,8 @@ const checkBoolValue = <T>(arg: T): BoolCheck<T> => {
 // console.log(checkBoolValue(NaN));
 // console.log(checkBoolValue(-0));
 
+//////////////////////////////////////////////////////////////////////
+
 interface HasID {
   id: number;
 }
@@ -78,6 +84,8 @@ const processUser = <T extends HasID>(user: T): T => {
 
 // console.log(processUser({ id: 1, name: "Tracey" }));
 // console.log(processUser({ name: "Tracey" })); - ERROR: no id as in HasID
+
+//////////////////////////////////////////////////////////////////////////
 
 const getUsersProperty = <T extends HasID, K extends keyof T>(
   users: T[],
@@ -158,5 +166,28 @@ const usersArray = [
   },
 ];
 
-console.log(getUsersProperty(usersArray, "username"));
-console.log(getUsersProperty(usersArray, "email"));
+// console.log(getUsersProperty(usersArray, "username"));
+// console.log(getUsersProperty(usersArray, "email"));
+
+/////////////////////////////////// generic in a class ///////////////////////
+
+class StateObject<T> {
+  private data: T;
+
+  constructor(value: T) {
+    this.data = value;
+  }
+
+  get state(): T {
+    return this.data;
+  }
+
+  set state(value: T) {
+    this.data = value;
+  }
+}
+
+const store = new StateObject(["john", 1, true]);
+console.log(store.state);
+store.state = [34, false, true];
+console.log(store.state);
