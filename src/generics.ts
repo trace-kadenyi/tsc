@@ -94,6 +94,7 @@ const getUsersProperty = <T extends HasID, K extends keyof T>(
   return users.map((user) => user[key]);
 };
 
+// JSON Placeholder API
 const usersArray = [
   {
     id: 1,
