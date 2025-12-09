@@ -1,4 +1,6 @@
 // utility types
+
+//////////////////// PARTIAL UTILITY TYPE ////////////////////////
 interface Assignment {
   studentId: string;
   title: string;
@@ -21,4 +23,6 @@ const assign1: Assignment = {
 
 console.log(updateAssignment(assign1, { grade: 95 }));
 
+const assignGraded: Assignment = updateAssignment(assign1, { grade: 95 });
 
+ 
