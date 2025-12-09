@@ -42,7 +42,7 @@ interface BoolCheck<T> {
   is: boolean;
 }
 
-const checkBoolVlue = <T>(arg: T): BoolCheck<T> => {
+const checkBoolValue = <T>(arg: T): BoolCheck<T> => {
   if (
     (Array.isArray(arg) && !arg.length) ||
     (isObj(arg) && !Object.keys(arg as keyof T).length)
@@ -53,20 +53,20 @@ const checkBoolVlue = <T>(arg: T): BoolCheck<T> => {
   return { value: arg, is: !!arg };
 };
 
-// console.log(checkBoolVlue(false));
-// console.log(checkBoolVlue(0));
-// console.log(checkBoolVlue(true));
-// console.log(checkBoolVlue(1));
-// console.log(checkBoolVlue("dave"));
-// console.log(checkBoolVlue(""));
-// console.log(checkBoolVlue(null));
-// console.log(checkBoolVlue(undefined));
-// console.log(checkBoolVlue({}));
-// console.log(checkBoolVlue({ name: "Dave" }));
-// console.log(checkBoolVlue([]));
-// console.log(checkBoolVlue([1, 2, 3]));
-// console.log(checkBoolVlue(NaN));
-// console.log(checkBoolVlue(-0));
+// console.log(checkBoolValue(false));
+// console.log(checkBoolValue(0));
+// console.log(checkBoolValue(true));
+// console.log(checkBoolValue(1));
+// console.log(checkBoolValue("dave"));
+// console.log(checkBoolValue(""));
+// console.log(checkBoolValue(null));
+// console.log(checkBoolValue(undefined));
+// console.log(checkBoolValue({}));
+// console.log(checkBoolValue({ name: "Dave" }));
+// console.log(checkBoolValue([]));
+// console.log(checkBoolValue([1, 2, 3]));
+// console.log(checkBoolValue(NaN));
+// console.log(checkBoolValue(-0));
 
 interface HasID {
   id: number;
