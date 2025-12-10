@@ -32,14 +32,14 @@ const recordAssignment = (assign: Required<Assignment>): Assignment => {
   return assign;
 };
 
-// const assign2: Assignment = {
-//   studentId: "Eng101",
-//   title: "First Assignment",
-//   grade: 78,
-//   verified: true,
-// };
+const assign2: Assignment = {
+  studentId: "Eng101",
+  title: "First Assignment",
+  grade: 78,
+  verified: true,
+};
 
-// console.log(recordAssignment({...assign2, verified: true}));
+console.log(recordAssignment({...assign2, verified: true}));
 const assignVerified: Readonly<Assignment> = {
   ...assignGraded,
   verified: true,
